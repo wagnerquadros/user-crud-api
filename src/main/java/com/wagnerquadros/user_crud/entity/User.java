@@ -1,4 +1,4 @@
-package com.wagnerquadros.user_crud.infrastructure.entity;
+package com.wagnerquadros.user_crud.entity;
 
 
 import jakarta.persistence.*;

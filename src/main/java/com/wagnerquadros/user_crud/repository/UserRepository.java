@@ -1,6 +1,6 @@
-package com.wagnerquadros.user_crud.infrastructure.repository;
+package com.wagnerquadros.user_crud.repository;
 
-import com.wagnerquadros.user_crud.infrastructure.entity.User;
+import com.wagnerquadros.user_crud.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

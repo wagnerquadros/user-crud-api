@@ -1,8 +1,9 @@
 package com.wagnerquadros.user_crud.controller;
 
-import com.wagnerquadros.user_crud.business.UserService;
-import com.wagnerquadros.user_crud.infrastructure.dto.UserDto;
-import com.wagnerquadros.user_crud.infrastructure.entity.User;
+import com.wagnerquadros.user_crud.dto.UserResponseDto;
+import com.wagnerquadros.user_crud.service.UserService;
+import com.wagnerquadros.user_crud.dto.UserRequestDto;
+import com.wagnerquadros.user_crud.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +16,8 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> saveUser(@RequestBody UserDto userDto){
-        return ResponseEntity.ok(userService.saveUser(userDto));
+    public ResponseEntity<UserResponseDto> saveUser(@RequestBody UserRequestDto userRequestDto){
+        return ResponseEntity.ok(userService.saveUser(userRequestDto));
     }
 
     @GetMapping
@@ -31,7 +32,7 @@ public class UserController {
     }
 
     @PutMapping
-    public ResponseEntity<User> updateUserById(@RequestParam Long id, @RequestBody UserDto userDto){
-        return ResponseEntity.ok(userService.updateUser(id, userDto));
+    public ResponseEntity<UserResponseDto> updateUserById(@RequestParam Long id, @RequestBody UserRequestDto userRequestDto){
+        return ResponseEntity.ok(userService.updateUser(id, userRequestDto));
     }
 }
